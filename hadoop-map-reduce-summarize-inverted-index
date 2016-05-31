@@ -1,0 +1,39 @@
+#mapper
+
+
+
+#reducer
+#!/usr/bin/python
+
+import sys
+
+oldKey = None
+oldId = None
+index = ""
+totalCount = 0
+
+for line in sys.stdin:
+    data_mapped = line.strip().split("\t")
+    if len(data_mapped) != 2:
+        # Something has gone wrong. Skip this line.
+        continue
+
+    thisKey, thisId = data_mapped
+
+if oldKey and oldKey != thisKey:
+    print oldKey,"\t",totalCount,"\t", index
+    oldKey = thisKey
+    totalCount = 0
+    index = ""
+
+if index == "":
+    index = thisId
+elif thisId != oldId:
+    index += "," + thisId
+
+totalCount += 1
+
+oldKey = thisKey
+oldId = thisId
+if oldKey != None:
+    print oldKey,"\t",totalCount,"\t", index
