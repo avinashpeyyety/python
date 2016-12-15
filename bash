@@ -64,7 +64,7 @@ cat ${outFile} | sort -g > ${tableColumnsFile}
 # Create HTML Email
 ############################
 > ${outFile}
-echo "To: avinash.peyyety@internal.usaa.com" >> ${outFile}
+echo "To: avinash.peyyety@internal" >> ${outFile}
 echo "Subject: Percentage Default Keys for ${TargetDatabase}" >> ${outFile}
 echo "Mime-Version: 1.0" >> ${outFile}
 echo "Content-Type: text/html" >> ${outFile}
