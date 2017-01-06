@@ -264,3 +264,20 @@ You are using pip version 8.1.1, however version 9.0.1 is available.
 You should consider upgrading via the 'pip install --upgrade pip' command.
 Your active configuration is: [cloudshell-28212]
 Success! Your environment is configured correctly.
+
+
+avinashpeyyety@inbound-byte-154607:~$ gcloud beta ml init-project
+Cloud ML needs to add its service accounts to your project 
+(inbound-byte-154607) as Editors. This will enable Cloud Machine 
+Learning to access resources in your project when running your 
+training and prediction jobs.
+Do you want to continue (Y/n)?  y
+Added serviceAccount:cloud-ml-service@inbound-byte-154607-3e1ed.iam.gserviceaccount.com as an Editor to project 'inbound-byte-154607'.
+
+
+
+avinashpeyyety@inbound-byte-154607:~$ PROJECT_ID=$(gcloud config list project --format "value(core.project)")
+Your active configuration is: [cloudshell-28212]
+avinashpeyyety@inbound-byte-154607:~$ BUCKET_NAME=${PROJECT_ID}-ml
+avinashpeyyety@inbound-byte-154607:~$ gsutil mb -l us-central1 gs://$BUCKET_NAME
+Creating gs://inbound-byte-154607-ml/...
