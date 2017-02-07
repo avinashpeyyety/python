@@ -11,10 +11,10 @@ import csv
 # Read twitter public timeline to search keyword and return matched tweets
 # =========================================================================
 
-TWITTER_APP_KEY = "szgk6TQ8aQl9IsCtJd8k969GY"
-TWITTER_APP_KEY_SECRET = "xek3ikt2Scq85C2hs3O1NcSHq6v7BGAmLieYj1biwCkKANldyQ"
-TWITTER_ACCESS_TOKEN = "35694384-kad8m87PXVTAEThaz46zl7crhI240a4ITi6U1NQ7S"
-TWITTER_ACCESS_TOKEN_SECRET = "NMG7vECi6GPoxToySYcaJy9IxhxQaPqfLsbEE1CNwDXqE"
+TWITTER_APP_KEY = "abc"
+TWITTER_APP_KEY_SECRET = "123"
+TWITTER_ACCESS_TOKEN = "456"
+TWITTER_ACCESS_TOKEN_SECRET = "xyz"
 client = Twython(app_key=TWITTER_APP_KEY,
             app_secret=TWITTER_APP_KEY_SECRET,
             oauth_token=TWITTER_ACCESS_TOKEN,
