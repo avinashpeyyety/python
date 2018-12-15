@@ -4,8 +4,8 @@ import os
 import tweepy
 import pandas as pd
 
-consumer_key = 'szgk6TQ8aQl9IsCtJd8k969GY'
-consumer_secret = 'xek3ikt2Scq85C2hs3O1NcSHq6v7BGAmLieYj1biwCkKANldyQ'
+consumer_key = ''
+consumer_secret = ''
 access_token = ''
 access_token_secret = ''
 auth = tweepy.OAuthHandler(consumer_key, consumer_secret)
@@ -16,8 +16,7 @@ trends1 = api.trends_place(23424848)
 data = trends1[0]
 trends = data['trends']
 names1 = [trend['name'] for trend in trends]
-#names = names1[:5]
-names = ["#BlameWithoutProof", "Shri Narendra Modi"]
+names = names1[:5]
 trendsName = ' '.join(names)
 print(trendsName)
 
@@ -33,6 +32,7 @@ for name in names:
             fd.write(str(tweet.user.friends_count).encode('utf-8')+","+
                     tweet.user.screen_name.encode('utf-8')+","+
                     str(tweet.user.followers_count).encode('utf-8')+"\n")
+            
     df=pd.read_csv('./data/%s' % name, header=None, names=list('ABC'))
     a=len(df[df.A>500].index)
     b=len(df.index)
